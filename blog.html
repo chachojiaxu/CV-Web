@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Jiaxu He</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="blog-page">
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">JH</a>
+    <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#formacion">Formación</a></li>
+      <li><a href="index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html#habilidades">Habilidades</a></li>
+      <li><a href="blog.html" class="nav-active">Blog</a></li>
+      <li>
+        <a href="resources/JiaxuHe_CVTradicional.pdf" class="nav-cta" download>
+          Descargar CV
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       BLOG HEADER
+  ═══════════════════════════════════════ -->
+  <header class="blog-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Blog</span>
+      </nav>
+      <span class="blog-category-badge">Diseño de APIs</span>
+      <h1 class="blog-title">
+        ¿Por qué tu código parece un laberinto?<br />
+        El coste real de ignorar el "sentido común" en las APIs
+      </h1>
+      <div class="blog-meta">
+        <img class="blog-author-avatar" src="resources/foto.jpg" alt="Jiaxu He"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="blog-author-fallback" style="display:none">JH</div>
+        <div class="blog-meta-text">
+          <span class="blog-author-name">Jiaxu He</span>
+          <span class="blog-date">Mayo 2026 · 5 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       ARTÍCULO
+  ═══════════════════════════════════════ -->
+  <main class="blog-main">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- Contenido -->
+        <article class="blog-article">
+
+          <p class="blog-lead">
+            Llevas 20 minutos mirando la documentación de una API que debería ser sencilla. Los
+            endpoints existen, los parámetros están ahí, y aun así algo no cuadra. No es que no
+            sepas lo que haces; es que quien diseñó eso tomó decisiones que tu cerebro tiene que
+            deshacer antes de poder avanzar.
+          </p>
+
+          <p>
+            Un estudio publicado en 2023 con 105 desarrolladores reales pone número a ese tiempo
+            perdido, y los resultados deberían cambiar cómo cualquier equipo revisa su código.
+          </p>
+
+          <!-- ───── Sección 1 ───── -->
+          <h2>El experimento que nadie había hecho</h2>
+
+          <p>
+            Investigadores de universidades de Alemania y los Países Bajos montaron algo
+            aparentemente simple. Cogieron 12 reglas básicas de diseño de APIs — cosas como cómo
+            nombrar los recursos o qué método HTTP usar para cada acción — y crearon dos versiones
+            de cada fragmento de código: una seguía la regla, la otra la violaba. Luego pusieron a
+            105 personas, entre estudiantes y profesionales con años de experiencia, a resolver
+            tareas de comprensión sobre cada versión.
+          </p>
+
+          <p>
+            La métrica principal que usaron se llama <strong>TAU</strong> (tiempo ajustado de
+            comprensión real). Es como si en lugar de medir solo si un corredor llega a la meta,
+            midieras cuánto esfuerzo le costó el camino. No solo si acertabas, sino cuánto tardaba
+            tu cerebro en llegar ahí. En 11 de las 12 reglas, la versión que violaba la norma salió
+            perdiendo de forma significativa.
+          </p>
+
+          <!-- ───── Sección 2 ───── -->
+          <h2>El error más caro: mezclar acciones con direcciones</h2>
+
+          <p>
+            La regla con mayor impacto en todo el experimento fue la de los
+            <strong>nombres CRUD en la URL</strong>. CRUD es el acrónimo de las cuatro operaciones
+            básicas sobre datos: crear, leer, actualizar y borrar. Poner esas palabras — create,
+            delete, update — dentro de la dirección de un endpoint fue con diferencia lo que más
+            confundió a los participantes. El motivo es simple: el método HTTP ya cumple esa
+            función.
+          </p>
+
+          <p>
+            Tiene lógica si lo piensas. Una dirección web debería decirte <em>qué</em> estás
+            tocando, no <em>qué vas a hacerle</em>. Imagina que entras a una tienda y en lugar de
+            ver una sección llamada "Zapatos" ves un cartel que dice "Comprar zapatos": la
+            información está ahí, pero tu cerebro tiene que hacer un paso extra que no debería ser
+            necesario.
+          </p>
+
+          <!-- Callout comparativa -->
+          <div class="blog-callout">
+            <div class="callout-comparison">
+              <div class="callout-col callout-bad">
+                <h4>&#x2715; Nomenclatura CRUD</h4>
+                <ul>
+                  <li>La URL lleva explícitamente la acción</li>
+                  <li>Verbos redundantes en las rutas</li>
+                  <li><code>POST /createUser</code></li>
+                  <li><code>DELETE /deleteUser/42</code></li>
+                </ul>
+              </div>
+              <div class="callout-col callout-good">
+                <h4>&#x2713; Nomenclatura RESTful</h4>
+                <ul>
+                  <li>El método HTTP lleva la acción</li>
+                  <li>Nomenclatura limpia y minimalista</li>
+                  <li><code>POST /users</code></li>
+                  <li><code>DELETE /users/42</code></li>
+                </ul>
+              </div>
+            </div>
+            <p class="callout-note">
+              Tamaño del efecto de esta regla: <strong>d = 2.17</strong> — el mayor de todos los
+              analizados. En estadística indica una diferencia práctica muy notable, no solo
+              significativa en el papel.
+            </p>
+          </div>
+
+          <!-- ───── Sección 3 ───── -->
+          <h2>El árbol al revés</h2>
+
+          <p>
+            La jerarquía de rutas fue otro punto conflictivo. La lógica natural es ir de lo
+            general a lo específico — primero el recurso padre y luego el hijo. Cuando esa
+            jerarquía se invierte o se rompe, el desarrollador tiene que reconstruir mentalmente
+            la relación entre recursos antes de poder hacer nada.
+          </p>
+
+          <!-- Callout jerarquía -->
+          <div class="blog-callout">
+            <div class="callout-comparison">
+              <div class="callout-col callout-bad">
+                <h4>&#x2715; Jerarquía rota</h4>
+                <code class="route-tree">/productos<br />↓<br />/tiendas<br />↓<br />/{id}</code>
+                <p class="callout-caption">El cerebro tiene que reconstruir la relación</p>
+              </div>
+              <div class="callout-col callout-good">
+                <h4>&#x2713; Jerarquía natural</h4>
+                <code class="route-tree">/tiendas<br />↓<br />/{id}<br />↓<br />/productos</code>
+                <p class="callout-caption">La ruta cuenta la historia sola</p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Algo parecido pasa con el uso del <strong>singular</strong> cuando debería ir el
+            plural. <code>/member</code> en lugar de <code>/members</code> parece una tontería,
+            pero el experimento muestra que ralentiza la comprensión de forma consistente. El
+            cerebro espera un patrón y encuentra otro, y ese desajuste tiene un coste real aunque
+            pequeño.
+          </p>
+
+          <!-- ───── Sección 4 ───── -->
+          <h2>La experiencia no te salva</h2>
+
+          <p>
+            La parte que más llama la atención del estudio es que el efecto se mantuvo
+            <strong>independientemente de la experiencia de los participantes</strong>. Da igual si
+            llevas 2 años o 12: ante una API mal diseñada, todos tardan más y todos se equivocan
+            más. Ni siquiera conocer modelos teóricos avanzados compensó un mal diseño.
+          </p>
+
+          <blockquote class="blog-quote">
+            No puedes resolver con experiencia lo que está roto en el diseño.
+          </blockquote>
+
+          <!-- ───── Sección 5 ───── -->
+          <h2>Diseñar una API es un acto de comunicación</h2>
+
+          <p>
+            Lo que el estudio demuestra, en el fondo, no es solo que hay reglas que conviene
+            seguir. Es que el diseño de una API no es un trámite técnico que haces antes de
+            ponerte a escribir código "de verdad". Es la primera decisión que afecta a todos los
+            que van a usar tu trabajo, incluido tú mismo dentro de unos meses cuando ya no
+            recuerdes por qué hiciste las cosas así.
+          </p>
+
+          <p>
+            La próxima vez que diseñes un endpoint, la pregunta no es solo si funciona. Es si
+            alguien que no estuvo en esa reunión puede entenderlo sin tener que preguntarte.
+          </p>
+
+          <!-- ───── Tags y CTA ───── -->
+          <div class="blog-footer-tags">
+            <span class="tag">REST</span>
+            <span class="tag">API Design</span>
+            <span class="tag">Clean Code</span>
+            <span class="tag">Backend</span>
+          </div>
+
+          <div class="blog-back">
+            <a href="index.html" class="btn btn-outline">← Volver al inicio</a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-author-photo">
+              <div class="photo-placeholder photo-placeholder--sm">JH</div>
+            </div>
+            <h3 class="sidebar-author-name">Jiaxu He</h3>
+            <p class="sidebar-author-bio">
+              Estudiante de Ingeniería Informática en la UPM. Desarrollo backend con Java y Spring Boot.
+              Escribo sobre lo que aprendo.
+            </p>
+            <a href="index.html" class="btn btn-outline btn-sm">Ver perfil completo</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h4 class="sidebar-toc-title">En este artículo</h4>
+            <nav class="sidebar-toc">
+              <a href="#" class="toc-link">El experimento que nadie había hecho</a>
+              <a href="#" class="toc-link">El error más caro: CRUD en la URL</a>
+              <a href="#" class="toc-link">El árbol al revés</a>
+              <a href="#" class="toc-link">La experiencia no te salva</a>
+              <a href="#" class="toc-link">Diseñar una API es comunicación</a>
+            </nav>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-name">Jiaxu He</span>
+        <div class="footer-links">
+          <a href="mailto:jiaxu1006@gmail.com">jiaxu1006@gmail.com</a>
+          <a href="https://www.linkedin.com/in/jiaxuhe" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="resources/JiaxuHe_CVTradicional.pdf" download>CV PDF</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 Jiaxu He · Madrid, España</p>
+    </div>
+  </footer>
+
+</body>
+</html>

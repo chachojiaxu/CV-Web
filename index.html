@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiaxu He — Ingeniero Informático</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#inicio" class="nav-logo">JH</a>
+    <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li>
+        <a href="resources/JiaxuHe_CVTradicional.pdf" class="nav-cta" download>
+          Descargar CV
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <header class="hero" id="inicio">
+    <div class="hero-inner">
+
+      <div class="hero-photo">
+        <!-- Sustituir el div por: <img src="resources/foto.jpg" alt="Jiaxu He" /> -->
+        <div class="photo-placeholder">JH</div>
+      </div>
+
+      <div class="hero-text">
+        <p class="hero-eyebrow">Hola, soy</p>
+        <h1 class="hero-name">Jiaxu He</h1>
+        <h2 class="hero-title">Ingeniero Informático <span class="accent">Backend</span></h2>
+        <p class="hero-bio">
+          Estudiante de Ingeniería Informática en la UPM con sólida base en desarrollo
+          backend con Java y Spring Boot, adquirida a través de proyectos académicos que
+          cubren desde APIs REST hasta despliegues en AWS. Busco incorporarme a un equipo
+          donde seguir creciendo como ingeniero backend en un entorno real y colaborativo.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="resources/JiaxuHe_CVTradicional.pdf" class="btn btn-outline" download>
+            Descargar CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       BARRA DE CONTACTO
+  ═══════════════════════════════════════ -->
+  <div class="contact-bar">
+    <div class="container">
+      <div class="contact-items">
+
+        <a href="tel:+34622234254" class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.28 6.28l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +34 622 23 42 54
+        </a>
+
+        <a href="mailto:jiaxu1006@gmail.com" class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          jiaxu1006@gmail.com
+        </a>
+
+        <a href="https://www.linkedin.com/in/jiaxuhe" target="_blank" rel="noopener" class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          linkedin.com/in/jiaxuhe
+        </a>
+
+        <span class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Madrid, España
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SOBRE MÍ
+  ═══════════════════════════════════════ -->
+  <section class="section" id="sobre-mi">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy un desarrollador backend apasionado por construir sistemas limpios, escalables y bien
+            diseñados. Durante mi grado en la UPM he trabajado en proyectos que me han permitido
+            aplicar desde algoritmos de grafos hasta arquitecturas de microservicios desplegadas en
+            la nube.
+          </p>
+          <p>
+            Creo que el código limpio no es un lujo, es una responsabilidad. Por eso aplico principios
+            SOLID y Clean Code en cada proyecto, independientemente de su tamaño.
+          </p>
+          <p>
+            Fuera del código me interesa la divulgación técnica. En mi
+            <a href="blog.html" class="inline-link">blog</a> escribo sobre conceptos de ingeniería
+            del software que me parecen relevantes y que a menudo se dan por sabidos sin explicarlos bien.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Proyectos backend</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Años codificando</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Tecnologías</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FORMACIÓN
+  ═══════════════════════════════════════ -->
+  <section class="section section-alt" id="formacion">
+    <div class="container">
+      <h2 class="section-title">Formación</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Grado en Ingeniería Informática</h3>
+              <span class="timeline-date">2023 – 2027 (En curso)</span>
+            </div>
+            <p class="timeline-institution">Universidad Politécnica de Madrid</p>
+            <p class="timeline-desc">
+              Especialización en desarrollo de software, estructuras de datos, algoritmos,
+              bases de datos e ingeniería del software. Trabajo habitual en equipos de 4–6 personas
+              con metodologías ágiles y control de versiones con Git.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROYECTOS
+  ═══════════════════════════════════════ -->
+  <section class="section" id="proyectos">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-subtitle">
+        Proyectos académicos desarrollados durante el grado, aplicando tecnologías y metodologías de entorno profesional.
+      </p>
+
+      <div class="projects-grid">
+
+        <!-- Proyecto 1 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">&#x3c;/&#x3e;</div>
+            <div class="project-meta">
+              <h3>Compilador para subconjunto de JavaScript</h3>
+            </div>
+          </div>
+          <ul class="project-bullets">
+            <li>
+              Desarrollo de un compilador funcional cubriendo análisis léxico, sintáctico y semántico,
+              con gestión de la tabla de símbolos y tratamiento de errores.
+            </li>
+            <li>Implementación en Java aplicando principios de Clean Code.</li>
+            <li>Control de versiones con Git.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Compiladores</span>
+            <span class="tag">Clean Code</span>
+            <span class="tag">Git</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">&#x25b3;</div>
+            <div class="project-meta">
+              <h3>Sistema de rutas óptimas — Metro CDMX</h3>
+            </div>
+          </div>
+          <ul class="project-bullets">
+            <li>
+              Motor de búsqueda de rutas óptimas modelando la red metropolitana como un grafo dirigido.
+            </li>
+            <li>Algoritmo A* en Java para el cálculo del camino mínimo entre estaciones.</li>
+            <li>Base de datos SQL para persistir rutas calculadas previamente.</li>
+            <li>Principios SOLID aplicados para facilitar la escalabilidad del sistema.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Algoritmo A*</span>
+            <span class="tag">SQL</span>
+            <span class="tag">SOLID</span>
+            <span class="tag">Git</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">&#x1f4cb;</div>
+            <div class="project-meta">
+              <h3>API REST — Gestión de reservas hoteleras</h3>
+              <span class="project-tech-badge">Java &amp; Spring Boot</span>
+            </div>
+          </div>
+          <ul class="project-bullets">
+            <li>
+              API REST completa para gestión de disponibilidad y reservas, aplicando el SDLC completo
+              desde diseño hasta implementación.
+            </li>
+            <li>Persistencia de datos con MySQL y Hibernate/JPA.</li>
+            <li>Aplicación estricta de SOLID y Clean Code.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Hibernate</span>
+            <span class="tag">REST</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 4 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">&#x2601;</div>
+            <div class="project-meta">
+              <h3>Microservicio de catálogo con despliegue en AWS</h3>
+              <span class="project-tech-badge">Java</span>
+            </div>
+          </div>
+          <ul class="project-bullets">
+            <li>
+              Servicio backend para gestión de productos con PostgreSQL como base de datos principal.
+            </li>
+            <li>Entorno de ejecución configurado en AWS.</li>
+            <li>Automatización de pruebas siguiendo TDD/BDD.</li>
+            <li>Integración de herramientas de IA (GitHub Copilot, Claude Code) para optimización
+              de algoritmos y generación de documentación técnica.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">AWS</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">TDD/BDD</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       HABILIDADES
+  ═══════════════════════════════════════ -->
+  <section class="section section-alt" id="habilidades">
+    <div class="container">
+      <h2 class="section-title">Habilidades</h2>
+
+      <div class="skills-layout">
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">
+            <span class="skills-group-icon">&#x1f4bb;</span> Técnicas
+          </h3>
+          <div class="skill-pills">
+            <span class="pill pill-tech">Java</span>
+            <span class="pill pill-tech">Spring Boot</span>
+            <span class="pill pill-tech">Kotlin</span>
+            <span class="pill pill-tech">Hibernate / JPA</span>
+            <span class="pill pill-tech">AWS</span>
+            <span class="pill pill-tech">SQL</span>
+            <span class="pill pill-tech">Git</span>
+            <span class="pill pill-tech">REST APIs</span>
+            <span class="pill pill-tech">SOLID</span>
+            <span class="pill pill-tech">Clean Code</span>
+            <span class="pill pill-tech">TDD / BDD</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">
+            <span class="skills-group-icon">&#x1f91d;</span> Blandas
+          </h3>
+          <div class="skill-pills">
+            <span class="pill pill-soft">Comunicación técnica</span>
+            <span class="pill pill-soft">Trabajo en equipo</span>
+            <span class="pill pill-soft">Gestión de proyectos</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">
+            <span class="skills-group-icon">&#x1f310;</span> Idiomas
+          </h3>
+          <div class="skill-pills">
+            <span class="pill pill-lang">Español — Nativo</span>
+            <span class="pill pill-lang">Inglés — B2</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BLOG TEASER
+  ═══════════════════════════════════════ -->
+  <section class="section" id="blog-teaser">
+    <div class="container">
+      <h2 class="section-title">Blog</h2>
+      <p class="section-subtitle">
+        Divulgación técnica sobre ingeniería del software y buenas prácticas de desarrollo.
+      </p>
+
+      <div class="blog-preview-card">
+        <span class="blog-tag">Diseño de APIs</span>
+        <h3>
+          ¿Por qué tu código parece un laberinto? El coste real de ignorar el
+          "sentido común" en las APIs
+        </h3>
+        <p>
+          Un estudio con 105 desarrolladores reales pone números al tiempo que se pierde
+          ante una API mal diseñada. Los resultados deberían cambiar cómo cualquier equipo
+          revisa su código.
+        </p>
+        <a href="blog.html" class="btn btn-primary">Leer artículo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-name">Jiaxu He</span>
+        <div class="footer-links">
+          <a href="mailto:jiaxu1006@gmail.com">jiaxu1006@gmail.com</a>
+          <a href="https://www.linkedin.com/in/jiaxuhe" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="resources/JiaxuHe_CVTradicional.pdf" download>CV PDF</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 Jiaxu He · Madrid, España</p>
+    </div>
+  </footer>
+
+</body>
+</html>
