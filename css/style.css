@@ -302,6 +302,21 @@ img { max-width: 100%; display: block; }
   50%       { opacity: 0.6; transform: scale(1.05); }
 }
 
+.hero-photo-img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+              var(--grad-accent) border-box;
+  border: 3px solid transparent;
+  box-shadow: 0 0 60px rgba(79,142,247,0.2);
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
 .photo-placeholder {
   width: 190px;
   height: 190px;
