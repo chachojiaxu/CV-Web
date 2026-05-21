@@ -6,8 +6,9 @@
   <title>Jiaxu He — Ingeniero Informático</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
     rel="stylesheet"
   />
 </head>
@@ -131,8 +132,9 @@
               Qué me mueve
             </span>
             <p>
-              El backend me apasiona porque es donde la lógica se vuelve real.
-              Diseñar sistemas que funcionen con coherencia, que escalen y que otros
+              El backend me apasiona porque es donde la lógica se vuelve real. Donde
+              puedo crear y plasmar cualquier idea que se me ocurra. Diseñar 
+              sistemas que funcionen con coherencia, que escalen y que otros
               puedan entender y mantener es lo que me hace querer seguir aprendiendo
               cada día.
             </p>
@@ -425,7 +427,7 @@
   <!-- ═══════════════════════════════════════
        CV & RECURSOS
   ═══════════════════════════════════════ -->
-  <section class="section section-alt" id="cv-recursos">
+  <section class="section" id="cv-recursos">
     <div class="container">
       <h2 class="section-title">CV &amp; Recursos</h2>
       <p class="section-subtitle">
@@ -488,7 +490,7 @@
   <!-- ═══════════════════════════════════════
        BLOG TEASER
   ═══════════════════════════════════════ -->
-  <section class="section" id="blog-teaser">
+  <section class="section section-alt" id="blog-teaser">
     <div class="container">
       <h2 class="section-title">Blog</h2>
       <p class="section-subtitle">
@@ -529,5 +531,93 @@
     </div>
   </footer>
 
+  <script>
+    /* ── Navbar scroll shadow ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* ── Scroll reveal ── */
+    const revealTargets = [
+      '.section-title', '.section-subtitle',
+      '.pres-block', '.stat-card',
+      '.timeline-item',
+      '.project-card',
+      '.skills-group',
+      '.cv-resource-card',
+      '.blog-preview-card',
+      '.contact-bar'
+    ];
+
+    const delayClasses = ['', 'reveal-d1', 'reveal-d2', 'reveal-d3', 'reveal-d4'];
+
+    revealTargets.forEach(selector => {
+      document.querySelectorAll(selector).forEach((el, i) => {
+        el.classList.add('reveal');
+        const dc = delayClasses[i % delayClasses.length];
+        if (dc) el.classList.add(dc);
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── Active nav link ── */
+    const sections  = document.querySelectorAll('section[id], header[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.getAttribute('id');
+          navAnchors.forEach(a =>
+            a.classList.toggle('nav-active', a.getAttribute('href') === `#${id}`)
+          );
+        }
+      });
+    }, { threshold: 0.45 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ── Counter animation ── */
+    function animateCounter(el) {
+      const raw    = el.textContent.trim();
+      const digits = raw.replace(/\D/g, '');
+      const suffix = raw.replace(/[0-9]/g, '');
+      if (!digits) return;
+      const end  = parseInt(digits, 10);
+      const dur  = 900;
+      const step = dur / end;
+      let   cur  = 0;
+      const timer = setInterval(() => {
+        cur++;
+        el.textContent = cur + suffix;
+        if (cur >= end) clearInterval(timer);
+      }, step);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+  </script>
 </body>
 </html>
