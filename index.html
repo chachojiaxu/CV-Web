@@ -26,6 +26,7 @@
       <li><a href="#proyectos">Mis proyectos</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#cv-recursos">Mis CVs</a></li>
+      <li><a href="#presentacion-pro">Presentación</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li>
         <a href="resources/JiaxuHe_CVTradicional.pdf" class="nav-cta" download>
@@ -441,7 +442,7 @@
         Tres formatos para que elijas el que más te encaje.
       </p>
 
-      <div class="cv-resources-grid">
+      <div class="cv-resources-grid cv-resources-grid--two">
 
         <!-- CV Tradicional -->
         <div class="cv-resource-card">
@@ -461,33 +462,72 @@
           </a>
         </div>
 
-        <!-- CV Infográfico — PENDIENTE -->
-        <div class="cv-resource-card cv-resource-card--pending">
-          <div class="cv-resource-icon cv-resource-icon--purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <line x1="3" y1="9" x2="21" y2="9"/>
-              <line x1="9" y1="21" x2="9" y2="9"/>
+        <!-- LinkedIn -->
+        <div class="cv-resource-card">
+          <div class="cv-resource-icon cv-resource-icon--linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
             </svg>
           </div>
-          <span class="cv-pending-badge">Próximamente</span>
-          <h3>CV Infográfico</h3>
-          <p>Una versión más visual de mi perfil. Todavía lo estoy terminando.</p>
-          <button class="btn btn-outline" disabled>En preparación</button>
+          <h3>Perfil de LinkedIn</h3>
+          <p>Mi perfil actualizado con proyectos, formación y recomendaciones.</p>
+          <a href="https://www.linkedin.com/in/jiaxuhe" class="btn btn-primary" target="_blank" rel="noopener">
+            Ver perfil
+          </a>
         </div>
 
-        <!-- VideoCV — PENDIENTE -->
-        <div class="cv-resource-card cv-resource-card--pending">
-          <div class="cv-resource-icon cv-resource-icon--green">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="23 7 16 12 23 17 23 7"/>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-            </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRESENTACIÓN PROFESIONAL
+  ═══════════════════════════════════════ -->
+  <section class="section section-alt" id="presentacion-pro">
+    <div class="container">
+      <h2 class="section-title">Presentación profesional</h2>
+      <p class="section-subtitle">
+        Una charla sobre diseño de APIs: qué dice la investigación, qué patrones generan
+        más fricción y cómo pequeñas decisiones cambian mucho.
+      </p>
+
+      <div class="presenpro-layout">
+
+        <div class="presenpro-video-wrap">
+          <iframe
+            class="presenpro-video"
+            src="https://www.youtube.com/embed/01txFhcYCv8"
+            title="El coste invisible de una API mal diseñada — Jiaxu He"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="presenpro-info">
+          <span class="presenpro-badge">Presentación oral</span>
+          <h3>El coste invisible de una API mal diseñada</h3>
+          <p>
+            En este vídeo presento los resultados de un estudio con 105 desarrolladores
+            sobre el impacto real del diseño de APIs. Analizo qué patrones generan más
+            fricciones, por qué el naming importa y cómo decisiones aparentemente
+            pequeñas pueden ahorrarte horas de trabajo a ti y a tu equipo.
+          </p>
+          <p>
+            Las diapositivas que uso en la presentación están disponibles abajo
+            por si quieres seguirla a tu ritmo.
+          </p>
+          <div class="presenpro-actions">
+            <a href="resources/El-coste-invisible-de-una-API-mal-disenada.pptx.pdf"
+               class="btn btn-outline" target="_blank" rel="noopener">
+              Ver diapositivas
+            </a>
+            <a href="blog.html" class="btn btn-ghost">
+              Leer el artículo
+            </a>
           </div>
-          <span class="cv-pending-badge">Próximamente</span>
-          <h3>VideoCV</h3>
-          <p>Me presento en vídeo. En cuanto lo tenga grabado, lo subo aquí.</p>
-          <button class="btn btn-outline" disabled>En preparación</button>
         </div>
 
       </div>
@@ -497,7 +537,7 @@
   <!-- ═══════════════════════════════════════
        BLOG TEASER
   ═══════════════════════════════════════ -->
-  <section class="section section-alt" id="blog-teaser">
+  <section class="section" id="blog-teaser">
     <div class="container">
       <h2 class="section-title">Blog</h2>
       <p class="section-subtitle">
