@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Jiaxu He</title>
+  <title>El coste invisible de una API mal diseñada — Jiaxu He</title>
+  <meta name="description" content="Un estudio con 105 desarrolladores muestra el impacto real del diseño de APIs en la productividad. Por Jiaxu He." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f8ef7'/><text x='50' y='68' font-family='sans-serif' font-size='48' font-weight='900' fill='white' text-anchor='middle'>JH</text></svg>" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/blog.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -246,8 +248,8 @@
           </div>
 
           <div class="sidebar-card">
-            <h4 class="sidebar-toc-title">En este artículo</h4>
-            <nav class="sidebar-toc">
+            <h4 class="sidebar-toc-title" id="toc-heading">En este artículo</h4>
+            <nav class="sidebar-toc" aria-labelledby="toc-heading">
               <a href="#experimento" class="toc-link">El experimento que nadie había hecho</a>
               <a href="#error-crud" class="toc-link">El error más caro: CRUD en la URL</a>
               <a href="#jerarquia" class="toc-link">El árbol al revés</a>
@@ -278,5 +280,37 @@
     </div>
   </footer>
 
+  <script>
+    /* ── Navbar scroll shadow ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* ── TOC active section ── */
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const articleHeadings = document.querySelectorAll('.blog-article h2[id]');
+
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            link.classList.toggle('toc-active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    articleHeadings.forEach(h => tocObserver.observe(h));
+  </script>
 </body>
 </html>

@@ -425,7 +425,7 @@ img { max-width: 100%; display: block; }
   padding: 0.25rem 0;
 }
 
-.contact-item:hover {
+a.contact-item:hover {
   color: var(--accent);
   transform: translateY(-1px);
 }
@@ -790,7 +790,7 @@ img { max-width: 100%; display: block; }
 .skills-layout {
   margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
 }
 
@@ -861,6 +861,7 @@ img { max-width: 100%; display: block; }
 
 .cv-resources-grid--two {
   max-width: 720px;
+  margin-inline: auto;
 }
 
 .cv-resource-card {
@@ -1138,7 +1139,7 @@ img { max-width: 100%; display: block; }
 .reveal-d4 { transition-delay: 0.32s; }
 
 /* ── Responsive ─────────────────────────────────── */
-@media (max-width: 960px) {
+@media (max-width: 1060px) {
   .skills-layout { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1166,7 +1167,7 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: block; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
   .nav-links.open {
     display: flex;
     flex-direction: column;

@@ -325,10 +325,15 @@
   transition: all var(--tr);
   border-left: 2px solid transparent;
 }
-.toc-link:hover {
+.toc-link:hover,
+.toc-link.toc-active {
   color: var(--accent);
   background: var(--accent-dim);
   border-left-color: var(--accent);
+}
+
+.toc-link.toc-active {
+  font-weight: 600;
 }
 
 /* ── Responsive ─────────────────────────────────── */
